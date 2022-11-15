@@ -1,6 +1,6 @@
 //> using lib "com.lihaoyi::os-lib:0.8.0"
-//> using lib "io.github.quafadas::dedav4s:0.8.1"
 //> using lib "io.circe::circe-literal:0.14.3"
+//> using lib "io.github.quafadas::dedav4s:0.8.1"
 
 import io.circe.literal._
 import viz.PlotTargets.desktopBrowser

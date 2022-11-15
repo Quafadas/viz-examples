@@ -7,4 +7,4 @@ There are also other ways to plot stuff in scala, but maybe it's educational, to
 
 1. [Example 1](src/Example_1.ipynb) - vega and jupyter
 2. [Example 2](src/Example_2.ipynb) - it's just JSON!
-3. []
+3. [Example 3]()
