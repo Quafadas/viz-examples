@@ -2,9 +2,8 @@ import viz.PlotTargets.desktopBrowser
 import viz.*
 import ujson.*
 
-case class FromFilePlot(path: os.Path, override val mods: Seq[ujson.Value => Unit] = List())(using PlotTarget) extends WithBaseSpec(mods)  :
+case class FromFilePlot(path: os.Path, override val mods: Seq[ujson.Value => Unit] = List()) extends WithBaseSpec(mods)  :
   override lazy val baseSpec: ujson.Value = ujson.read(os.read(path))
-
 
 @main
 def example8_FromFile() =  
