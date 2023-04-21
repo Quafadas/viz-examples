@@ -16,6 +16,8 @@ import viz.dsl.vega.Legend
 import fs2.text
 import viz.dsl.vega.TitleClass
 import viz.vega.plots.BarChart.{*, given}
+import viz.dsl.vega.LabelAlignEnum
+import viz.dsl.vega.TitleOrientEnum
 
 /**
   * Plotting scalas performance vs the other 19 languages in the quicktype test suite. 
@@ -64,12 +66,15 @@ def Example_6() =
       QuicktypeTestResult("c++", 3, 43)
     ).sortBy(_.amount)
 
+    // let's have a look at this data quickly
+    scautable.scautable.desktopShow(plotMe)
+
     val xAxis = viz.dsl.vega.Axis(
       scale = "xscale",
-      orient = "bottom",
+      orient = TitleOrientEnum.bottom ,
       labelAngle = -90.0.some,
       labelFontSize = 18.0.some,
-      labelAlign = "right".some
+      labelAlign = LabelAlignEnum.right.some
     )
 
     val title = TitleClass(

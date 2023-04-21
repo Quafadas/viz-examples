@@ -7,10 +7,12 @@ There are also other ways to plot stuff in scala - but my hope is that this repo
 
 For the almond notebooks, you'll need this. 
 
-```cs launch --fork almond:0.13.1 --scala 3.1.0 --force -- --install```
+```cs launch --fork almond:0.13.9 --scala 3.2.2 -- --force --install```
 
 For the others, they run best in scala-cli, you'll need, well... 
 [scala-cli](https://scala-cli.virtuslab.org)
+
+`scala-cli run -w . --main-class Example_6`
 
 1. [Example 1](src/Example_1.ipynb) - vega and jupyter
 2. [Example 2](src/Example_2.ipynb) - it's just JSON!
