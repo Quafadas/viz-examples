@@ -22,6 +22,8 @@ import viz.PlotTarget
 Having explored some of the abstractions, let do something fun, and see if we can produce an animation of browian motion with fs2. Also I get to learn some fs2.
 
 We're going to emit N "steps" per move, and plot M moves. Moves will be metered so that we have one every S milliseconds.
+
+Sometimnes I Have to run it twice to get started
  */
 
 object Example7_BrownianMotion extends IOApp.Simple:
@@ -97,33 +99,33 @@ object Example7_BrownianMotion extends IOApp.Simple:
   Left here for posterity but unused. My workflow was to start from the "StepChart" vega example, which you see below and get essentially free, and evolve it into the above.
   Then "hard copy" the successful spec, which is what's you see above.
      */
-    def chartWithMods(dataObj: ujson.Arr) =
-        IO.pure(
-          StepChartLite(
-            List(
-              spec => spec.obj.remove("transform"),
-              spec =>
-                  spec("encoding")("y") = ujson.Obj("field" -> "y",
-                                                    "type" -> "quantitative",
-                                                    "scale" -> ujson.Obj("domain" -> List(-20, 20))
-                  ),
-              spec =>
-                  spec("encoding")("x") =
-                      ujson.Obj("field" -> "x", "type" -> "quantitative", "axis" -> ujson.Obj("labels" -> false)),
-              spec => spec("width") = "container",
-              spec => spec("height") = "container",
-              spec => spec("data") = dataObj
-            )
-          )
-        )
+    // def chartWithMods(dataObj: ujson.Arr) =
+    //     IO.pure(
+    //       StepChartLite(
+    //         List(
+    //           spec => spec.obj.remove("transform"),
+    //           spec =>
+    //               spec("encoding")("y") = ujson.Obj("field" -> "y",
+    //                                                 "type" -> "quantitative",
+    //                                                 "scale" -> ujson.Obj("domain" -> List(-20, 20))
+    //               ),
+    //           spec =>
+    //               spec("encoding")("x") =
+    //                   ujson.Obj("field" -> "x", "type" -> "quantitative", "axis" -> ujson.Obj("labels" -> false)),
+    //           spec => spec("width") = "container",
+    //           spec => spec("height") = "container",
+    //           spec => spec("data") = dataObj
+    //         )
+    //       )
+    //     )
 
-    def chartStart(dataObj: ujson.Arr) =
-        IO.pure(
-          StepChartLite(
-            List(
-              spec => spec("width") = "container",
-              spec => spec("height") = "container",
-              spec => spec("data") = dataObj
-            )
-          )
-        )
+    // def chartStart(dataObj: ujson.Arr) =
+    //     IO.pure(
+    //       StepChartLite(
+    //         List(
+    //           spec => spec("width") = "container",
+    //           spec => spec("height") = "container",
+    //           spec => spec("data") = dataObj
+    //         )
+    //       )
+    //     )

@@ -3,30 +3,38 @@ import java.io.File
 
 /*
 
-There's kind of a pattern to what we've done so far, find some existing spec, change it a bit, and plot. 
+There's kind of a pattern to what we've done so far, find some existing spec, change it a bit, and plot.
 
-here is another example that follows that exact pattern - let's get some spec from an example on the internet, and pump it into a temp file
-which we open in a browser
+here is another example that follows that exact pattern - let's
 
-*/
+1. get a spec from an example on the internet.
+2. write some html which gets the vega javascript libraries
+3. pump all that into a temp file as astring.
+4. open in a browser
+
+ */
 @main
-def example3_Abstractions() =  
-  val aSpec = ujson.read(requests.get("https://vega.github.io/vega/examples/bar-chart.vg.json").text())
-  
-  aSpec("data")(0)("values") = ujson.Arr(
-      ujson.Obj("category" -> "testing", "amount" -> 5),
-      ujson.Obj("category" -> "testing1", "amount" -> 6),
-  )
-  val f = os.temp( header(aSpec, "Testing"), suffix = ".html", deleteOnExit=true )
-  openBrowserToFile(f.toIO)
-  
+def example3_Abstractions() =
+    val aSpec = ujson.read(requests.get("https://vega.github.io/vega/examples/bar-chart.vg.json").text())
 
-// Some helpers
+    aSpec("data")(0)("values") = ujson.Arr(
+      ujson.Obj("category" -> "testing", "amount" -> 5),
+      ujson.Obj("category" -> "testing1", "amount" -> 6)
+    )
+    val f = os.temp(
+      header(aSpec, "Testing"), 
+      suffix = ".html", 
+      deleteOnExit = true
+    )
+    openBrowserToFile(f.toIO)
+end example3_Abstractions
+
+
 def openBrowserToFile(f: File) = Desktop.getDesktop().browse(f.toURI())
 
-def header(spec : ujson.Value, title: String = "") = {
-	
-	raw"""<!DOCTYPE html>
+def header(spec: ujson.Value, title: String = "") = {
+
+    raw"""<!DOCTYPE html>
 	<html>
 	<head>
 	  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
@@ -55,7 +63,7 @@ def header(spec : ujson.Value, title: String = "") = {
 		<div id="vis"></div>
 
 	<script type="text/javascript">
-	  const spec = ${ujson.write(spec, indent=2)};  
+	  const spec = ${ujson.write(spec, indent = 2)};  
 	  const view = new vega.View(vega.parse(spec), {
 		renderer: "canvas", // renderer (canvas or svg)
 		container: "#vis", // parent DOM container
@@ -66,3 +74,4 @@ def header(spec : ujson.Value, title: String = "") = {
 	</body>
 	</html> """
 }
+end header

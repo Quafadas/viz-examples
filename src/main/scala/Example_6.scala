@@ -22,7 +22,13 @@ import viz.dsl.vega.TitleOrientEnum
 /**
   * Plotting scalas performance vs the other 19 languages in the quicktype test suite. 
   * 
-  * Note that this sort of "blends" styles. It uses strongly typed parts of the vega schema to help with tab completion and discoverability, but inserts them into an example.
+  * Note that this sort of "blends" styles. 
+  * 
+  * It uses strongly typed parts of the vega schema to help with tab completion and discoverability on the individual elements.
+  * 
+  * However, the insertion into the final plot, is then as untyped JSON.
+  * 
+  * The final chart, is a portmanteau of all the styles discussed to this point.
   * 
   */
 
@@ -89,7 +95,7 @@ def Example_6() =
         viz.Utils.fillDiv,
         spec => spec("data")(0)("values") = writeJs(plotMe),
         spec => spec("title") = ujson.read(title.asJson.toString),
-        spec => spec("axes")(0) = ujson.read(xAxis.asJson.toString), // prettier if ujson-circe makes it to scala 3... todo.        
+        spec => spec("axes")(0) = ujson.read(xAxis.asJson.toString), // much prettier if ujson-circe makes it to scala 3... todo.        
         spec => spec("marks")(1) = ujson.read("""{
       "type": "text",
       "from": {"data": "table"},
