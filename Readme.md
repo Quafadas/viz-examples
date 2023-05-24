@@ -16,11 +16,11 @@ For the others, they run best in scala-cli, you'll need, well...
 
 1. [Example 1](src/Example_1.ipynb) - vega and jupyter
 2. [Example 2](src/Example_2.ipynb) - it's just JSON!
-3. [Example 3](main/scala/Example_3.scala) - other plot targets
-4. [Example 4](Example_4.ipynb) - Using abstractions
-5. [Example 5](Example_5.ipynb) - Exploring typesafety?
-6. [Example 6](Example_6.ipynb) - Hybrid?
-7. [Example 7](Example_7.ipynb) - Brownian Motion
-8. [Example 8](Example_8.scala) - From a file 
+3. [Example 3](src/main/scala/Example_3.scala) - other plot targets
+4. [Example 4](src/Example_4.ipynb) - Using abstractions
+5. [Example 5](src/Example_5.ipynb) - Exploring typesafety?
+6. [Example 6](src/Example_6.ipynb) - Hybrid?
+7. [Example 7](src/main/scala/Example_7.scala) - Brownian Motion
+8. [Example 8](src/main/scala/Example_8.scala) - From a file 
 
 ![Brownian Motion](/src/main/scala/Brownian.gif)
