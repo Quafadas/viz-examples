@@ -18,7 +18,7 @@ For the others, they run best in scala-cli, you'll need, well...
 2. [Example 2](src/Example_2.ipynb) - it's just JSON!
 3. [Example 3](src/main/scala/Example_3.scala) - other plot targets
 4. [Example 4](src/Example_4.ipynb) - Using abstractions
-5. [Example 5](src/Example_5.ipynb) - Exploring typesafety?
+5. [Example 5](src/main/scala/Example_5.scala) - Exploring typesafety?
 6. [Example 6](src/Example_6.ipynb) - Hybrid?
 7. [Example 7](src/main/scala/Example_7.scala) - Brownian Motion
 8. [Example 8](src/main/scala/Example_8.scala) - From a file 
