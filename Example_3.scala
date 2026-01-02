@@ -1,7 +1,4 @@
-import viz.vegaFlavour
-import viz.PlotTargets.desktopBrowser
-import viz.Plottable.ppnt
-import viz.NamedTupleReadWriter.given_ReadWriter_T
+import io.github.quafadas.plots.SetupVegaBrowser.{*, given}
 
 /**
   * I often start from an existng vega example. Follow the SpecUrls to find them or visit the vega examples...

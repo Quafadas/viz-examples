@@ -1,6 +1,6 @@
 import viz.vegaFlavour
 import viz.PlotTargets.desktopBrowser
-import viz.Plottable.ppSpecUrl
+import viz.Plottable.*
 import viz.vega.plots.SpecUrl
 
 /**

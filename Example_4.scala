@@ -15,7 +15,7 @@ import viz.PlotTargets.websocket
 import ujson.Value
 import viz.PlotTarget
 import viz.NamedTupleReadWriter.given_ReadWriter_T
-import viz.Plottable.ppujson
+import viz.Plottable.*
 import viz.vegaFlavour
 
 /*
