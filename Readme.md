@@ -14,3 +14,25 @@ For the others, they run best in scala-cli, you'll need, well...
 For websockets;
 ```coursier launch io.github.quafadas:dedav4s_3:0.9.0 -M viz.websockets.serve -- 8085```
 
+to convert a notebook to a presentation.
+
+```sh
+./nbconvert/bin/jupyter-nbconvert --to slides --theme=dark notebooks/Example_5.ipynb --post serve --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags remove_cell --TagRemovePreprocessor.remove_all_outputs_tags remove_output
+```
+Customisation. note that ipynb is just JSON. You can add the following JSON snippets to cells to control slide type and output removal.
+
+```json
+{
+  "cell_type": "code",
+  "execution_count": 26,
+  "metadata": {
+    "slideshow": {
+      "slide_type": "subslide"
+    },
+    "tags": [
+      "remove_output"
+    ]
+  },
+  "outputs": []
+}
+```
