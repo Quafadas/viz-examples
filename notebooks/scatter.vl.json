@@ -1,0 +1,51 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"values":[
+    {
+      "date": "2012-01-01T00:00:00",
+      "precipitation": 0,
+      "temp_max": 12.8,
+      "temp_min": 5,
+      "wind": 4.7,
+      "weather": "drizzle"}
+  ]},
+  "mark": {"type": "point"},
+  "encoding": {
+    "color": {
+      "field": "weather",
+      "scale": {
+        "domain": ["sun", "fog", "drizzle", "rain", "snow"],
+        "range": ["#e7ba52", "#c7c7c7", "#aec7e8", "#1f77b4", "#9467bd"]
+      },
+      "type": "nominal"
+    },
+    "size": {
+      "field": "precipitation",
+      "scale": {"range": [1, 200]},
+      "type": "quantitative"
+    },
+    "x": {
+      "field": "temp_max",
+      "title": "Maximum Daily Temperature (C)",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "temp_range",
+      "title": "Daily Temperature Range (C)",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "params": [
+    {
+      "name": "param_1e9efca18e7a2868",
+      "select": {"type": "interval", "encodings": ["x", "y"]},
+      "bind": "scales"
+    }
+  ],
+  "transform": [
+    {"calculate": "datum.temp_max - datum.temp_min", "as": "temp_range"}
+  ],
+  "width": 600,
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json"
+}

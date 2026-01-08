@@ -1,0 +1,16 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"values": [
+    {
+      "date": "2012-01-01T00:00:00",
+      "precipitation": 0,
+      "temp_max": 12.8,
+      "temp_min": 5,
+      "wind": 4.7,
+      "weather": "drizzle"
+    }
+  ]},
+  "mark": {"type": "tick"},
+  "encoding": {"x": {"field": "precipitation", "type": "quantitative"}},
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json"
+}

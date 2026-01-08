@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "A simple bar chart with embedded data.",
+  "title": "",
+  "height": 300,
+  "width": 300,
+  "data": {
+    "values": [
+      {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "a", "type": "quantitative", "aggregate": "average"},
+    "y": {"field": "b", "type": "temporal", "timeUnit": "year", "sort": "descending"},
+    "color": {"field": "a"}
+  }
+}

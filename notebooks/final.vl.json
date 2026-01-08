@@ -1,0 +1,90 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "vconcat": [
+    {
+      "mark": {"type": "point"},
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "param_54dd647193d9b3b3",
+            "field": "weather",
+            "scale": {
+              "domain": ["sun", "fog", "drizzle", "rain", "snow"],
+              "range": ["#e7ba52", "#c7c7c7", "#aec7e8", "#1f77b4", "#9467bd"]
+            },
+            "type": "nominal"
+          },
+          "value": "lightgray"
+        },
+        "size": {
+          "field": "precipitation",
+          "scale": {"range": [1, 200]},
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "temp_max",
+          "title": "Maximum Daily Temperature (C)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "temp_range",
+          "title": "Daily Temperature Range (C)",
+          "type": "quantitative"
+        }
+      },
+      "height": 400,
+      "name": "view_3b29225baa9d9617_0",
+      "transform": [
+        {
+          "calculate": "(datum['temp_max'] - datum['temp_min'])",
+          "as": "temp_range"
+        }
+      ],
+      "width": 600
+    },
+    {
+      "mark": {"type": "bar"},
+      "encoding": {
+        "color": {
+          "field": "weather",
+          "scale": {
+            "domain": ["sun", "fog", "drizzle", "rain", "snow"],
+            "range": ["#e7ba52", "#c7c7c7", "#aec7e8", "#1f77b4", "#9467bd"]
+          },
+          "type": "nominal"
+        },
+        "x": {"aggregate": "count", "type": "quantitative"},
+        "y": {"field": "weather", "type": "nominal"}
+      },
+      "transform": [
+        {
+          "calculate": "(datum['temp_max'] - datum['temp_min'])",
+          "as": "temp_range"
+        },
+        {"filter": {"param": "param_54dd647193d9b3b3"}}
+      ],
+      "width": 600
+    }
+  ],
+  "data": {"name": "data1"},
+  "params": [
+    {
+      "name": "param_54dd647193d9b3b3",
+      "select": {"type": "interval"},
+      "views": ["view_3b29225baa9d9617_0"]
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "datasets": {
+    "data1": [
+      {
+        "date": "2012-01-01T00:00:00",
+        "precipitation": 0,
+        "temp_max": 12.8,
+        "temp_min": 5,
+        "wind": 4.7,
+        "weather": "drizzle"
+      }
+    ]
+  }
+}
