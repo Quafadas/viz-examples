@@ -4,7 +4,21 @@ import io.circe.syntax.*
 
 @main
 def example2_FromTable =
-  val data = CSV.resource("titanic.csv").toVector
+  val data: Vector[
+    (PassengerId: Int,
+     Survived: Boolean,
+     Pclass: Int,
+     Name: String,
+     Sex: String,
+     Age: Option[Double],
+     SibSp: Int,
+     Parch: Int,
+     Ticket: String,
+     Fare: Double,
+     Cabin: Option[String],
+     Embarked: Option[String]
+    )
+  ] = CSV.resource("titanic.csv").toVector
   data.take(15).ptbln
 
   val histogram = VegaPlot.fromResource("histogram.vl.json")
@@ -37,6 +51,5 @@ def example2_FromTable =
     _.encoding.x.field := "Age",
     _.encoding.x.bin.step := 5,
     _.encoding += (color = (field = "Sex", `type` = "nominal")).asJson,
-    _.encoding += (column = (field = "Pclass", `type` = "nominal")).asJson,
-
+    _.encoding += (column = (field = "Pclass", `type` = "nominal")).asJson
   )
