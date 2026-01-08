@@ -1,0 +1,11 @@
+{
+  "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}},
+  "data": {"values": [{"a": "b"}]},
+  "mark": "rect",
+  "encoding": {
+    "color": {"type": "quantitative", "aggregate": "count"},
+    "x": {"type": "quantitative", "bin": true, "field": "Miles_per_Gallon"},
+    "y": {"type": "quantitative", "bin": true, "field": "Horsepower"}
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"
+}

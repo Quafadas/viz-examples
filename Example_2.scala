@@ -25,3 +25,21 @@ def example2_FromTable =
     _.encoding.x.field := "Age",
     _.encoding.x.bin.step := 5
   )
+
+  histogram.plot(
+    _.data.values := data.asJson,
+    _.title := s"Age Distribution of All passengers",
+    _.encoding.x.field := "Age",
+    _.encoding.x.bin.step := 5,
+    _.encoding += (color = (field = "Sex", `type` = "nominal")).asJson
+  )
+
+  histogram.plot(
+    _.data.values := data.asJson,
+    _.title := s"Age Distribution of All passengers by Class",
+    _.encoding.x.field := "Age",
+    _.encoding.x.bin.step := 5,
+    _.encoding += (color = (field = "Sex", `type` = "nominal")).asJson,
+    _.encoding += (column = (field = "Pclass", `type` = "nominal")).asJson,
+
+  )
