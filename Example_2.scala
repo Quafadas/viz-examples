@@ -2,9 +2,6 @@ import io.github.quafadas.table.{*, given}
 import io.github.quafadas.plots.SetupVegaBrowser.{*, given}
 import io.circe.syntax.*
 
-/**
-  * I often start from an existng vega example. Follow the SpecUrls to find them or visit the vega examples...
-  */
 @main
 def example2_FromTable =
   val data = CSV.resource("titanic.csv").toVector
