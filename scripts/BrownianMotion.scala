@@ -18,13 +18,6 @@ import viz.NamedTupleReadWriter.given_ReadWriter_T
 import viz.Plottable.*
 import viz.vegaFlavour
 
-/*
-Having explored some of the abstractions, let do something fun, and see if we can produce an animation of browian motion with fs2. Also I get to learn some fs2.
-
-We're going to emit N "steps" per move, and plot M moves. Moves will be metered so that we have one every S milliseconds.
-
-Sometimnes I Have to run it twice to get started
- */
 
 object Example4_BrownianMotion extends IOApp.Simple:
 

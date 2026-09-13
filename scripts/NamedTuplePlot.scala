@@ -7,7 +7,7 @@ import io.github.quafadas.plots.SetupVegaBrowser.{*, given}
 def example4_FromNamedTuple =
   (
     schema = "https://vega.github.io/schema/vega-lite/v5.json",
-    description = "A step chart constrained to +/-20 for an easy demo of brownian motion",
+    description = "Named Tuple Plot",
     data = (values = List(
       (x = 1, y = 1),
       (x = 2, y = 5),

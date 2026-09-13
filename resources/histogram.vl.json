@@ -4,8 +4,13 @@
       10,12,13
   ]},
   "title": "Age Distribution ",
-  "width": "container",
-  "height": "container",
+  "width": "400",
+  "height": "400",
+  "autosize": {
+    "type": "pad",
+    "contains": "padding",
+    "resize": false
+  },
   "mark": {
     "type": "bar",
     "tooltip": true

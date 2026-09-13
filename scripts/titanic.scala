@@ -21,7 +21,10 @@ def example2_FromTable =
   ] = CSV.resource("titanic.csv").toVector
   data.take(15).ptbln
 
-  val histogram = VegaPlot.fromResource("histogram.vl.json")
+  val histogram = VegaPlot.fromResource("histogram.vl.json").overlay(
+    _.width := "container",
+    _.height := "container"
+  )
 
   histogram.plot(
     _.data.values := data.filter(_.Sex == "male").asJson,
