@@ -6,3 +6,4 @@
 //> using dep io.github.quafadas::dedav4s:0.10.7
 //> using dep com.lihaoyi::upickle:4.4.3
 //> using dep co.fs2::fs2-core:3.14.0
+//> using exclude notebook-shadow
