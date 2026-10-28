@@ -2,11 +2,8 @@
 
 My hobby project of on-off thinking about plotting stuff in scala. To install almond for the notebooks.
 
-```cs launch --fork almond:0.14.5 --scala 3.8.4 -- --force --install```
+```cs launch -r jitpack  --use-bootstrap sh.almond::scala-kernel:0.15.0 --scala 3.9.0 -- --install --force --env "JDK_JAVA_OPTIONS=--add-modules=jdk.incubator.vector" --display-name scala_3_9```
 
-To get LSP support worrking the notebooks, install this VS Code extension
-
-https://github.com/Quafadas/Almond_Mill_Experiment/releases/latest
 
 For the others, they run best in scala-cli, you'll need, well...
 [scala-cli](https://scala-cli.virtuslab.org)
