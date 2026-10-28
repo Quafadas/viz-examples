@@ -8,8 +8,8 @@ def example2_FromTable =
   data.take(15).ptbln
 
   val histogram = VegaPlot.fromResource("histogram.vl.json").overlay(
-    _.width += "container",
-    _.height := "container"
+    _.width := "container".asJson,
+      _.height := "container".asJson
   )
 
   histogram.plot(
